@@ -67,6 +67,14 @@ The app features a high-converting onboarding flow that follows the "Promise →
 ### Social
 - **Share Recipes**: Native sharing to send recipes to friends via any app
 
+## Environment variables
+
+Secrets must **never** be committed to git. Copy `.env.example` to `.env` locally, or set values in the **Vibecode App ENV tab**.
+
+- `.env` and other env files are gitignored; only `.env.example` is tracked.
+- `EXPO_PUBLIC_*` values are embedded in the client app. For OpenAI vision/recipes, set `EXPO_PUBLIC_VIBECODE_AI_PROXY_URL` and deploy the optional proxy in `server/ai-proxy` so the OpenAI key stays on the server.
+- If keys were ever pushed to a public repository, rotate them at each provider immediately (history is not rewritten by this repo).
+
 ## Structure
 
 ```
